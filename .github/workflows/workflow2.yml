@@ -1,0 +1,10 @@
+name: Workflow2
+on: workflow_dispatch
+jobs:
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greeting Message
+        run: echo "Welcome To Seccond Workflow"
+      - name: Job Description
+        run: echo "Runner Is Ubuntu"  
