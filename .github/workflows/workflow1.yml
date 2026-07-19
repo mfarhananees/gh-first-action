@@ -1,5 +1,8 @@
-name: Workflow1
-on: workflow_dispatch
+name: Workflow 1
+on: 
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 jobs:
   first-job:
     runs-on: windows-latest
@@ -8,4 +11,3 @@ jobs:
         run: echo "Hello, World!"
       - name: Print Ending Message
         run: echo "Done, GoodBye!"
-    
