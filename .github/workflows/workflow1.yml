@@ -11,11 +11,13 @@ jobs:
       - name: Print Ending Message
         run: echo "Done, GoodBye!"
   second-job:
+    needs: first-job
     runs-on: ubuntu-latest
     steps:
       - name: Print Greeting In Ubuntu
         run: echo "Welcome to ubuntu"
   third-job:
+    needs:  second-job
     runs-on: macos-latest
     steps:
       - name: Print Greeting In MACOS
