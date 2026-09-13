@@ -10,3 +10,13 @@ jobs:
         run: echo "Hello, World!"
       - name: Print Ending Message
         run: echo "Done, GoodBye!"
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Greeting In Ubuntu
+        run: echo "Welcome to ubuntu"
+  third-job:
+    runs-on: macos-latest
+    steps:
+      - name: Print Greeting In MACOS
+        run: echo "Welcome To MacOs"
