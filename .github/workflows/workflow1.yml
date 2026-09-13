@@ -6,7 +6,7 @@ jobs:
   first-job:
     runs-on: windows-latest
     steps:
-      name: Print Greeting
+      - name: Print Greeting
         run: echo "Hello, World!"
       - name: Print Ending Message
         run: echo "Done, GoodBye!"
@@ -14,7 +14,7 @@ jobs:
     needs: first-job
     runs-on: ubuntu-latest
     steps:
-      - name: Print Greeting In Ubuntu
+      name: Print Greeting In Ubuntu
         run: echo "Welcome to ubuntu"
   third-job:
     needs:  second-job
