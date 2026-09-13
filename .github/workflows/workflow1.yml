@@ -23,6 +23,7 @@ jobs:
       - name: Print Greeting In MACOS
         run: echo "Welcome To MacOs"
   fourth-job:
+    needs: first-job
     runs-on: ubuntu-latest
     steps:
       - name: Parallel Step
