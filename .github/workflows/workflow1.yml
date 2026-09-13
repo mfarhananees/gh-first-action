@@ -3,29 +3,27 @@ on:
   push:
     branches: [ main ]
 jobs:
-  first-job:
+  lint:
     runs-on: windows-latest
     steps:
       - name: Print Greeting
         run: echo "Hello, World!"
       - name: Print Ending Message
         run: echo "Done, GoodBye!"
-  second-job:
-    needs: first-job
+  test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Print Greeting In Ubuntu
         run: echo "Welcome to ubuntu"
-  third-job:
-    needs:  
-      - second-job
-      - fourth-job
+  build:
+    needs: test
     runs-on: macos-latest
     steps:
       - name: Print Greeting In MACOS
         run: echo "Welcome To MacOs"
-  fourth-job:
-    needs: first-job
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Parallel Step
