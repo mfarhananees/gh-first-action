@@ -12,9 +12,9 @@ jobs:
         run: echo "Done, GoodBye!"
   second-job:
     needs: first-job
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-lates
     steps:
-      name: Print Greeting In Ubuntu
+      - name: Print Greeting In Ubuntu
         run: echo "Welcome to ubuntu"
   third-job:
     needs:  second-job
