@@ -12,7 +12,7 @@ jobs:
         run: echo "Done, GoodBye!"
   second-job:
     needs: first-job
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: Print Greeting In Ubuntu
         run: echo "Welcome to ubuntu"
@@ -22,3 +22,8 @@ jobs:
     steps:
       - name: Print Greeting In MACOS
         run: echo "Welcome To MacOs"
+  fourth-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parallel Step
+        run: echo " This is a Parallel Step"
